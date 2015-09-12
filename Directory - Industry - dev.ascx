@@ -68,7 +68,7 @@
     </div>
         <br/>
             <script>
-            var About = "<%# Eval("description").ToString().Replace("/","&#47;").Replace("""","&#34;")%>";
+            var About = "<%# HttpUtility.HtmlEncode(Eval("description").ToString()).ToString().Replace("\n", "<br/>").Replace("\r", "<br/>")%>";
             var AboutDisplay = "<b>About Us:</b><br/>"+About+"";
             if (About == "")
                 AboutDisplay = ""
