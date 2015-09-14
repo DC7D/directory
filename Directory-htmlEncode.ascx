@@ -51,7 +51,7 @@
                     faxDisplay = ""
                 document.write(faxDisplay)              
                 </script>
-            </li>
+            </li>html
             <li><b>Primary Contact:</b>
                 <%# Eval("a_410707b195544cd984376608b1802904-firstname")%> <%# Eval("a_410707b195544cd984376608b1802904-lastname")%>
             </li>
@@ -68,7 +68,7 @@
     </div>
         <br/>
             <script>
-            var About = "<%# HttpUtility.HtmlEncode(Eval("description").ToString()).ToString().Replace("\n", "<br/>").Replace("\r", "<br/>")%>";
+            var About = "<%# Server.HtmlEncode(Eval("description"))%>";
             var AboutDisplay = "<b>About Us:</b><br/>"+About+"";
             if (About == "")
                 AboutDisplay = ""
